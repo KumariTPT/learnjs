@@ -1,73 +1,38 @@
-function hello(name='Nimetu', age = Infinity){
-    let yearText = 'years';
-    if(age === 1 || age === -1){
-        yearText = 'year';
-    }
-    console.log(`hello ${name} + name +  and you are ${age}  ${yearText} old`);
-
+function hello(){
+    console.log('hello1');
+}
+let hello2 = function(){
+    console.log('hello2');
 }
 
-hello('Neg', 42);
-hello('Yuri', 50);
-hello('Madis', 9);
+let hello3 = () => {
+    console.log('hello3');
+}
+
+let hello4 = () => console.log('hello4');
+
 hello();
+hello2();
+hello3();
+hello4();
 
-function volume(h, l, w){
-    return h*w*l;
-}
-
-let answer = volume(4,2,5);
-console.log(answer);
-
-function number(i) {
-    console.log(i);
-    if(i<10){
-        numbers(i++);
+let person = {
+    name: 'Joe',
+    age: '15',
+    describe (){
+        console.log('name:' + this.name + ' age ' + this.age);
+    },
+    describe2 (){
+        console.log('name:' + this.name + ' age ' + this.age);
+    },
+    describe3 (){
+        console.log('name:' + this.name + ' age ' + this.age);
     }
 }
-numbers(0);
 
-let nums = [0, 1, 2, 3, 4];
+person.name = 'Martin';
+person.age = 33;
 
-function print(num){
-    console.log(num);
-}
-
-nums.forEach(print);
-nums.forEach(function (num){
-    console.log('Num is ' + num);
-});
-
-nums.forEach((num) => {
-    console.log('Nm is ' +num);
-});
-
-nums.forEach((num) => {
-    console.log('Nm is ' +num);
-});
-nums.forEach(num => console.log('Num is ' + num));
-
-let sums = nums.map(num => {
-    return num + 10;
-})
-console.log(sums);
-
-sums = nums.map(num => num + 10);
-console.log(sums);
-
-let um = nums.reduce((total,num) => total+num);
-console.log(sum);
-
-let sorted = nums.sort ((a,b) => {
-    if(a > b) {
-        return 1 ;
-    } else if (a<b) {
-        return -1;
-    } else {
-        return 0;
-    }
-});
-console.log(sorted);
-
-console.log(Math.PI);
-console.log(Math.round(Math.random() *50 ) + 50);
+person.describe();
+person.describe2();
+person.describe3();
